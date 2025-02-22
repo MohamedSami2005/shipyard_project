@@ -1,0 +1,11 @@
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin_panel/admin_panel.css' %}">
+<h1>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Ship Building Order</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

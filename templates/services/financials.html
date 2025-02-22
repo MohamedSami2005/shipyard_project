@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Financials - Chennai Shipyard
+{% endblock %}
+
+{% block head %}
+    <!-- Link to the page-specific CSS file -->
+    <link rel="stylesheet" href="{% static 'services/services.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="financials-section">
+        <h1>Financial Reports</h1>
+        <div class="financials-container">
+            <!-- Financial Reports -->
+            <div class="financial-card">
+                <h2>Annual Report 2023</h2>
+                <p><strong>Revenue:</strong> $500M</p>
+                <p><strong>Profit:</strong> $100M</p>
+                <a href="#" class="btn">Download Report</a>
+            </div>
+            <div class="financial-card">
+                <h2>Quarterly Report Q1 2023</h2>
+                <p><strong>Revenue:</strong> $120M</p>
+                <p><strong>Profit:</strong> $25M</p>
+                <a href="#" class="btn">Download Report</a>
+            </div>
+            <div class="financial-card">
+                <h2>Quarterly Report Q2 2023</h2>
+                <p><strong>Revenue:</strong> $130M</p>
+                <p><strong>Profit:</strong> $30M</p>
+                <a href="#" class="btn">Download Report</a>
+            </div>
+            <div class="financial-card">
+                <h2>Quarterly Report Q3 2023</h2>
+                <p><strong>Revenue:</strong> $140M</p>
+                <p><strong>Profit:</strong> $35M</p>
+                <a href="#" class="btn">Download Report</a>
+            </div>
+            <div class="financial-card">
+                <h2>Quarterly Report Q4 2023</h2>
+                <p><strong>Revenue:</strong> $110M</p>
+                <p><strong>Profit:</strong> $20M</p>
+                <a href="#" class="btn">Download Report</a>
+            </div>
+            <div class="financial-card">
+                <h2>Annual Report 2022</h2>
+                <p><strong>Revenue:</strong> $480M</p>
+                <p><strong>Profit:</strong> $95M</p>
+                <a href="#" class="btn">Download Report</a>
+            </div>
+            <div class="financial-card">
+                <h2>Quarterly Report Q1 2022</h2>
+                <p><strong>Revenue:</strong> $115M</p>
+                <p><strong>Profit:</strong> $22M</p>
+                <a href="#" class="btn">Download Report</a>
+            </div>
+            <div class="financial-card">
+                <h2>Quarterly Report Q2 2022</h2>
+                <p><strong>Revenue:</strong> $125M</p>
+                <p><strong>Profit:</strong> $28M</p>
+                <a href="#" class="btn">Download Report</a>
+            </div>
+            <div class="financial-card">
+                <h2>Quarterly Report Q3 2022</h2>
+                <p><strong>Revenue:</strong> $135M</p>
+                <p><strong>Profit:</strong> $32M</p>
+                <a href="#" class="btn">Download Report</a>
+            </div>
+            <div class="financial-card">
+                <h2>Quarterly Report Q4 2022</h2>
+                <p><strong>Revenue:</strong> $105M</p>
+                <p><strong>Profit:</strong> $18M</p>
+                <a href="#" class="btn">Download Report</a>
+            </div>
+        </div>
+        <a href="{% url 'services' %}" class="btn back-btn">Back to Services</a>
+    </div>
+{% endblock %}

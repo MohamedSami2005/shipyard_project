@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Stock Export Request - Shipyard
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'stock_export/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h1>Stock Export Request</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- User & Company Details -->
+        <fieldset>
+            <legend>User & Company Details</legend>
+            <div class="form-group">
+                <label for="{{ form.full_name.id_for_label }}">Full Name:</label>
+                {{ form.full_name }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.company_name.id_for_label }}">Company Name:</label>
+                {{ form.company_name }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.contact_number.id_for_label }}">Contact Number:</label>
+                {{ form.contact_number }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Email Address:</label>
+                {{ form.email }}
+            </div>
+        </fieldset>
+
+        <!-- Stock Details -->
+        <fieldset>
+            <legend>Stock Details</legend>
+            <div class="form-group">
+                <label for="{{ form.stock_name.id_for_label }}">Stock Name:</label>
+                {{ form.stock_name }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.stock_category.id_for_label }}">Stock Category:</label>
+                {{ form.stock_category }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.stock_quantity.id_for_label }}">Stock Quantity:</label>
+                {{ form.stock_quantity }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.stock_value.id_for_label }}">Stock Value (₹ / $):</label>
+                {{ form.stock_value }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.stock_condition.id_for_label }}">Stock Condition:</label>
+                {{ form.stock_condition }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.stock_images.id_for_label }}">Upload Stock Images:</label>
+                {{ form.stock_images }}
+            </div>
+        </fieldset>
+
+        <!-- Export Destination & Shipping Details -->
+        <fieldset>
+            <legend>Export Destination & Shipping Details</legend>
+            <div class="form-group">
+                <label for="{{ form.destination_country.id_for_label }}">Destination Country:</label>
+                {{ form.destination_country }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.destination_port.id_for_label }}">Destination Port:</label>
+                {{ form.destination_port }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.expected_delivery_date.id_for_label }}">Expected Delivery Date:</label>
+                {{ form.expected_delivery_date }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.mode_of_transport.id_for_label }}">Mode of Transport:</label>
+                {{ form.mode_of_transport }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.warehouse_location.id_for_label }}">Warehouse Location:</label>
+                {{ form.warehouse_location }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.shipping_partner.id_for_label }}">Shipping Partner (if any):</label>
+                {{ form.shipping_partner }}
+            </div>
+        </fieldset>
+
+        <!-- Export Compliance & Customs Details -->
+        <fieldset>
+            <legend>Export Compliance & Customs Details</legend>
+            <div class="form-group checkbox-group">
+                {{ form.export_license_required }}
+                <label for="{{ form.export_license_required.id_for_label }}">Export License Required?</label>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.customs_declaration_form.id_for_label }}">Upload Customs Declaration Form:</label>
+                {{ form.customs_declaration_form }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.special_handling_instructions.id_for_label }}">Special Handling Instructions:</label>
+                {{ form.special_handling_instructions }}
+            </div>
+        </fieldset>
+
+        <!-- Payment & Insurance Details -->
+        <fieldset>
+            <legend>Payment & Insurance Details</legend>
+            
+            <div class="form-group">
+                <label for="{{ form.insurance_required.id_for_label }}">Insurance Required?</label>
+                {{ form.insurance_required }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.insurance_documents.id_for_label }}">Upload Insurance Documents:</label>
+                {{ form.insurance_documents }}
+            </div>
+        </fieldset>
+
+        <!-- Terms & Confirmation -->
+        <fieldset>
+            <legend>Terms & Confirmation</legend>
+            <div class="form-group checkbox-group">
+                {{ form.terms_confirmed }}
+                <label for="{{ form.terms_confirmed.id_for_label }}">I confirm that all the details provided are accurate and comply with export regulations.</label>
+            </div>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" class="btn">Submit Request</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

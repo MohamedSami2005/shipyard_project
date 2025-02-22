@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe for Tender Updates</title>
+    <link rel="stylesheet" href="{% static 'tender/styles.css' %}">
+</head>
+<body>
+    <div class="subscribe-container">
+        <h1>Subscribe for Tender Updates</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</body>
+</html>

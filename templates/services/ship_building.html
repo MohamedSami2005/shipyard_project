@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Ship Building - Shipyard
+{% endblock %}
+
+{% block head %}
+    <!-- Link to the page-specific CSS file -->
+    <link rel="stylesheet" href="{% static 'services/services.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="services-section">
+        <h1>Ship Building</h1>
+        <form method="post" class="form-section">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Order Now</button>
+        </form>
+        <a href="{% url 'services' %}" class="btn back-btn">Back to Services</a>
+    </div>
+{% endblock %}

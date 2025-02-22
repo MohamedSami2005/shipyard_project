@@ -1,0 +1,30 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin_panel/admin_panel.css' %}">
+<h1>Ship Building Orders</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Ship Type</th>
+            <th>Budget</th>
+            <th>Preferred Technology</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.ship_type }}</td>
+            <td>{{ order.budget }}</td>
+            <td>{{ order.preferred_technology }}</td>
+            <td>{{ order.created_at }}</td>
+            <td>
+                <a href="{% url 'ship_building_update' order.pk %}">Edit</a>
+                <a href="{% url 'ship_building_delete' order.pk %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

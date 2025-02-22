@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Open Tenders - Shipyard
+{% endblock %}
+
+{% block head %}
+    <!-- Link to the page-specific CSS file -->
+    <link rel="stylesheet" href="{% static 'tender/styles.css' %}">
+    <style>
+        /* Inline CSS with the background image */
+        body .content {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('{% static "images/keppel-2039122_1280.JPG" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="tender-list">
+        <h1>Open Tenders</h1>
+        {% for tender in tenders %}
+        <div class="tender-card">
+            <h2>{{ tender.name }}</h2>
+            <p>{{ tender.description }}</p>
+            <p><strong>Deadline:</strong> {{ tender.deadline }}</p>
+            <p><strong>Bid Amount Range:</strong> {{ tender.bid_amount_range }}</p>
+            <p><strong>Status:</strong> {{ tender.status }}</p>
+            <a href="{{ tender.document.url }}" download>Download Tender Document</a>
+            <a href="{% url 'tender_detail' tender.pk %}">View Details</a>
+        </div>
+        {% endfor %}
+        <a href="{% url 'subscribe' %}" class="subscribe-link">Subscribe for Updates</a>
+    </div>
+{% endblock %}

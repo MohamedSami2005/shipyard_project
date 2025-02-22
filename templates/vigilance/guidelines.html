@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Vigilance Guidelines - Shipyard
+{% endblock %}
+
+{% block head %}
+    <!-- Link to the page-specific CSS file -->
+    <link rel="stylesheet" href="{% static 'vigilance/styles.css' %}">
+    <style>
+        /* Inline CSS for the background image */
+        body .content {
+            background-image: url('{% static "images/vigilance.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Vigilance Guidelines</h1>
+    <p>
+        The Vigilance Department plays a crucial role in maintaining transparency, integrity, and accountability within the shipyard. 
+        It ensures adherence to ethical practices, prevents misconduct, and promotes a culture of honesty among employees and stakeholders.
+    </p>
+    
+    <h2>Objectives of Vigilance</h2>
+    <ul>
+        <li>Ensure compliance with legal and ethical standards.</li>
+        <li>Prevent and detect fraudulent activities.</li>
+        <li>Encourage employees to report any suspicious or unethical behavior.</li>
+        <li>Protect whistleblowers and maintain confidentiality.</li>
+        <li>Enhance operational efficiency by eliminating corruption risks.</li>
+    </ul>
+
+    <h2>Preventive Measures</h2>
+    <p>
+        To uphold ethical practices, the vigilance department has implemented several preventive measures, including:
+    </p>
+    <ul>
+        <li>Regular audits and inspections of operations.</li>
+        <li>Training programs on ethical conduct and fraud prevention.</li>
+        <li>Strict enforcement of anti-corruption policies.</li>
+        <li>Implementation of transparent procurement and contracting processes.</li>
+        <li>Encouragement of proactive reporting mechanisms.</li>
+    </ul>
+
+    <h2>How to Report a Concern?</h2>
+    <p>
+        Employees, stakeholders, and the public can report any unethical activities, misconduct, or suspicious behavior through 
+        our secure and confidential channels. Your identity will be protected, and strict action will be taken against those involved 
+        in malpractices.
+    </p>
+    <p>
+        To report an issue, please click the link below:
+    </p>
+    <a href="{% url 'report_issue' %}" class="btn btn-warning">Report an Issue</a>
+
+    <h2>Rights and Protection for Whistleblowers</h2>
+    <p>
+        We ensure full protection to whistleblowers under our policy. Any form of retaliation against individuals who report concerns 
+        in good faith will not be tolerated. If you believe you are facing any adverse action after reporting an issue, please contact 
+        our vigilance team immediately.
+    </p>
+
+    <h2>Frequently Asked Questions (FAQs)</h2>
+    <p>
+        If you have any questions regarding vigilance policies, reporting procedures, or ethical guidelines, please refer to our FAQ section:
+    </p>
+    <a href="{% url 'vigilance_faq' %}" class="btn btn-info">FAQs</a>
+
+    <h2>Contact Details</h2>
+    <p><strong>Vigilance Officer:</strong> John Doe</p>
+    <p><strong>Email:</strong> <a href="mailto:john.doe@shipyard.com">john.doe@shipyard.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+1234567890">+123 456 7890</a></p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Our Team - Shipyard
+{% endblock %}
+
+{% block head %}
+    <!-- Link to the page-specific CSS file -->
+    <link rel="stylesheet" href="{% static 'teams/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Our Team</h1>
+        {% for role, members in roles.items %}
+        <h2>{{ role }}s</h2>
+        <div class="team-grid">
+            {% for member in members %}
+            <div class="team-card">
+                <img src="{{ member.image.url }}" alt="{{ member.name }}">
+                <h3>{{ member.name }}</h3>
+                <p>{{ member.bio }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

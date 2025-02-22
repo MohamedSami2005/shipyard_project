@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Shipyard{% endblock %}</title>
+    <!-- Link to the global CSS file -->
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    {% block head %}{% endblock %} <!-- Placeholder for page-specific head content -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About Us</a>
+        <a href="{% url 'teams_page' %}">Teams</a>
+        <a href="{% url 'services' %}">Services & Products</a>
+        <a href="{% url 'tender_list' %}">Tender</a>
+        <a href="{% url 'vigilance_guidelines' %}">Vigilance</a>
+        <a href="{% url 'stock_export_request' %}">Stock Export</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+
+    <!-- Content Block -->
+    <div class="content">
+        {% block content %}
+        <!-- Content will be overridden in child templates -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-details">
+            <div>
+                <h3>Email</h3>
+                <p>info@chennaishipyard.com</p>
+            </div>
+            <div>
+                <h3>Phone</h3>
+                <p>+91 8098778622</p>
+            </div>
+            <div>
+                <h3>Address</h3>
+                <p>144, Shipyard Beach Road, Chennai, Tamilnadu, India</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Facilities - Shipyard
+{% endblock %}
+
+{% block head %}
+    <!-- Link to the page-specific CSS file -->
+    <link rel="stylesheet" href="{% static 'services/services.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="facilities-section">
+        <h1>Shipyard Facilities</h1>
+        <div class="facilities-container">
+            <!-- Example Facility Cards -->
+<div class="facility-card">
+    <h2>Hotels</h2>
+    <p>Comfortable accommodations for crew and visitors.</p>
+</div>
+<div class="facility-card">
+    <h2>Dry Dockers</h2>
+    <p>State-of-the-art dry docking facilities.</p>
+</div>
+<div class="facility-card">
+    <h2>Storage</h2>
+    <p>Secure storage for equipment and materials.</p>
+</div>
+<div class="facility-card">
+    <h2>Logistics</h2>
+    <p>Efficient logistics support for operations.</p>
+</div>
+<div class="facility-card">
+    <h2>Repair & Maintenance</h2>
+    <p>Advanced ship repair and maintenance services.</p>
+</div>
+<div class="facility-card">
+    <h2>Fuel Station</h2>
+    <p>Reliable refueling services for vessels.</p>
+</div>
+<div class="facility-card">
+    <h2>Security</h2>
+    <p>24/7 surveillance and security for the premises.</p>
+</div>
+<div class="facility-card">
+    <h2>Medical Center</h2>
+    <p>Emergency medical support and healthcare services.</p>
+</div>
+<div class="facility-card">
+    <h2>Training Center</h2>
+    <p>Specialized training programs for maritime professionals.</p>
+</div>
+<div class="facility-card">
+    <h2>Waste Management</h2>
+    <p>Eco-friendly waste disposal and recycling facilities.</p>
+</div>
+
+
+        </div>
+        <a href="{% url 'services' %}" class="btn back-btn">Back to Services</a>
+    </div>
+{% endblock %}

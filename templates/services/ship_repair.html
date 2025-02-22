@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Ship Repair - Shipyard
+{% endblock %}
+
+{% block head %}
+    <!-- Link to the page-specific CSS file -->
+    <link rel="stylesheet" href="{% static 'services/services.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="services-section">
+        <h1>Ship Repair</h1>
+
+        <!-- Complaint Submission Form -->
+        <div class="form-section">
+            <h2>Complaint Submission</h2>
+            <form method="post" id="complaintForm">
+                {% csrf_token %}
+                <label for="ship_model">Ship Model:</label>
+                <input type="text" id="ship_model" name="ship_model" required>
+
+                <label for="year_of_manufacture">Year of Manufacture:</label>
+                <input type="number" id="year_of_manufacture" name="year_of_manufacture" required>
+
+                <label for="ship_type">Ship Type:</label>
+                <select id="ship_type" name="ship_type" required>
+                    <option value="Oil Tanker">Oil Tanker</option>
+                    <option value="Cargo Ship">Cargo Ship</option>
+                    <option value="Container Ship">Container Ship</option>
+                    <option value="Passenger Ship">Passenger Ship</option>
+                </select>
+
+                <label for="issue_description">Description of the Issue:</label>
+                <textarea id="issue_description" name="issue_description" rows="5" required></textarea>
+
+                <button type="submit" class="btn">Submit Complaint</button>
+            </form>
+        </div>
+
+        <!-- Check Current Repair Status -->
+        <div class="status-section">
+            <h2>Check Current Repair Status</h2>
+            <div class="status-container">
+                <!-- Example Repair Status Cards -->
+                <div class="status-card">
+                    <h3>Ship Model: Oil Tanker</h3>
+                    <p><strong>Year:</strong> 2015</p>
+                    <p><strong>Status:</strong> In Progress</p>
+                    <p><strong>Progress:</strong> 60%</p>
+                </div>
+                <div class="status-card">
+                    <h3>Ship Model: Cargo Ship</h3>
+                    <p><strong>Year:</strong> 2018</p>
+                    <p><strong>Status:</strong> Completed</p>
+                    <p><strong>Progress:</strong> 100%</p>
+                </div>
+                <div class="status-card">
+                    <h3>Ship Model: Container Ship</h3>
+                    <p><strong>Year:</strong> 2020</p>
+                    <p><strong>Status:</strong> Not Started</p>
+                    <p><strong>Progress:</strong> 0%</p>
+                </div>
+            </div>
+        </div>
+        <a href="{% url 'services' %}" class="btn back-btn">Back to Services</a>
+    </div>
+{% endblock %}

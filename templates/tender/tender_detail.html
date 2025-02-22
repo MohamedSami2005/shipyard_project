@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tender.name }}</title>
+    <link rel="stylesheet" href="{% static 'tender/styles.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>{{ tender.name }}</h1>
+        <p>{{ tender.description }}</p>
+        <p><strong>Deadline:</strong> {{ tender.deadline }}</p>
+        <p><strong>Bid Amount Range:</strong> {{ tender.bid_amount_range }}</p>
+        <p><strong>Status:</strong> {{ tender.status }}</p>
+        <a href="{{ tender.document.url }}" download>Download Tender Document</a>
+
+        <h2>Apply for Tender</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit Bid</button>
+        </form>
+    </div>
+</body>
+</html>

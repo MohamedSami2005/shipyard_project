@@ -1,0 +1,11 @@
+{% load static %}
+{% block content %}
+<h1>Delete Ship Repair Complaint</h1>
+<link rel="stylesheet" type="text/css" href="{% static 'admin_panel/admin_panel.css' %}">
+<p>Are you sure you want to delete this complaint?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete</button>
+    <a href="{% url 'ship_repair_list' %}">Cancel</a>
+</form>
+{% endblock %}

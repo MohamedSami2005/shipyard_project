@@ -1,0 +1,33 @@
+{% load static %}
+
+{% block content %}
+<h1>Ship Repair Complaints</h1>
+<link rel="stylesheet" type="text/css" href="{% static 'admin_panel/admin_panel.css' %}">
+<table>
+    <thead>
+        <tr>
+            <th>Ship Model</th>
+            <th>Year of Manufacture</th>
+            <th>Ship Type</th>
+            <th>Issue Description</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for repair in repairs %}
+        <tr>
+            <td>{{ repair.ship_model }}</td>
+            <td>{{ repair.year_of_manufacture }}</td>
+            <td>{{ repair.ship_type }}</td>
+            <td>{{ repair.issue_description }}</td>
+            <td>{{ repair.created_at }}</td>
+            <td>
+                <a href="{% url 'ship_repair_update' repair.pk %}">Edit</a>
+                <a href="{% url 'ship_repair_delete' repair.pk %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

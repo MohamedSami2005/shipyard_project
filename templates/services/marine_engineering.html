@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Marine Engineering - Chennai Shipyard
+{% endblock %}
+
+{% block head %}
+    <!-- Link to the page-specific CSS file -->
+    <link rel="stylesheet" href="{% static 'services/services.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="faculty-section">
+        <h1>Marine Engineering Faculty</h1>
+        <div class="faculty-container">
+            <!-- Faculty Cards with Tamil-origin names -->
+            <div class="faculty-card">
+                <h2>Dr. Aravind Kumar</h2>
+                <p><strong>Expertise:</strong> Naval Architecture</p>
+                <p><strong>Experience:</strong> 22+ years</p>
+            </div>
+            <div class="faculty-card">
+                <h2>Dr. Meenakshi Sundaram</h2>
+                <p><strong>Expertise:</strong> Marine Propulsion Systems</p>
+                <p><strong>Experience:</strong> 18+ years</p>
+            </div>
+            <div class="faculty-card">
+                <h2>Dr. Raghavan Iyer</h2>
+                <p><strong>Expertise:</strong> Offshore Engineering</p>
+                <p><strong>Experience:</strong> 14+ years</p>
+            </div>
+            <div class="faculty-card">
+                <h2>Dr. Lakshmi Narayanan</h2>
+                <p><strong>Expertise:</strong> Ship Design & Hydrodynamics</p>
+                <p><strong>Experience:</strong> 20+ years</p>
+            </div>
+            <div class="faculty-card">
+                <h2>Dr. Priya Raman</h2>
+                <p><strong>Expertise:</strong> Marine Electrical Systems</p>
+                <p><strong>Experience:</strong> 12+ years</p>
+            </div>
+            <div class="faculty-card">
+                <h2>Dr. Santhosh Raj</h2>
+                <p><strong>Expertise:</strong> Subsea Engineering</p>
+                <p><strong>Experience:</strong> 16+ years</p>
+            </div>
+            <div class="faculty-card">
+                <h2>Dr. Suresh Chandran</h2>
+                <p><strong>Expertise:</strong> Marine Safety & Regulations</p>
+                <p><strong>Experience:</strong> 25+ years</p>
+            </div>
+            <div class="faculty-card">
+                <h2>Dr. Karthik Subramanian</h2>
+                <p><strong>Expertise:</strong> Marine Structural Engineering</p>
+                <p><strong>Experience:</strong> 17+ years</p>
+            </div>
+            <div class="faculty-card">
+                <h2>Dr. Anitha Venkat</h2>
+                <p><strong>Expertise:</strong> Coastal & Port Engineering</p>
+                <p><strong>Experience:</strong> 15+ years</p>
+            </div>
+            <div class="faculty-card">
+                <h2>Dr. Venkatesh Ramachandran</h2>
+                <p><strong>Expertise:</strong> Marine Environmental Science</p>
+                <p><strong>Experience:</strong> 19+ years</p>
+            </div>
+        </div>
+        <a href="{% url 'services' %}" class="btn back-btn">Back to Services</a>
+    </div>
+{% endblock %}

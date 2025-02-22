@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Thank You - Shipyard
+{% endblock %}
+
+{% block content %}
+    <div class="thanks-section">
+        <h1>Thank You!</h1>
+        <p>Your shipbuilding order has been successfully submitted.</p>
+        <a href="{% url 'services' %}" class="btn back-btn">Back to Services</a>
+    </div>
+{% endblock %}
