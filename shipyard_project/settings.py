@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-poq&oz_!%b!h4b#*!$=7mivun4kyjw3t@7bhug5p+qu##b1nll
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://shipyard-project-2t3q.onrender.com/', '127.0.0.1', 'localhost']
 
 
 # Application definition
