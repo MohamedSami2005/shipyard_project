@@ -12,7 +12,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-poq&oz_!%b!h4b#*!$=
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 # Allowed Hosts
-ALLOWED_HOSTS = ['*', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ["*", '127.0.0.1', 'localhost']
 
 # Installed Apps
 INSTALLED_APPS = [
@@ -69,7 +69,9 @@ WSGI_APPLICATION = 'shipyard_project.wsgi.application'
 
 # Database Configuration
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL', 'postgres://postgres:saqsami@localhost:5432/shipyard_db'))
+    'default': dj_database_url.config(
+        default="postgresql://shipyard_project_user:5zQcKqqCcE2rlQhNU7krhYeqjVVtWsYJ@dpg-cut9tatds78s738u59dg-a.singapore-postgres.render.com/shipyard_project"
+    )
 }
 
 # Password Validators
