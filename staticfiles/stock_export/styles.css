@@ -1,0 +1,121 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1abc9c;
+    padding: 0 10px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Checkbox Alignment */
+.form-group input[type="checkbox"] {
+    width: auto; /* Reset width for checkboxes */
+    margin-right: 10px; /* Add spacing between checkbox and label */
+}
+
+.form-group.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.form-group.checkbox-group label {
+    margin-bottom: 0; /* Remove bottom margin for checkbox labels */
+    font-weight: normal; /* Optional: Make checkbox labels less bold */
+}
+
+/* Buttons */
+.btn {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #16a085;
+}
+
+/* Success Page */
+.success-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.success-container h1 {
+    color: #1abc9c;
+}
+
+.success-container p {
+    font-size: 1.1rem;
+    color: #555;
+}

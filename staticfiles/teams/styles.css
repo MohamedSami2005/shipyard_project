@@ -5,13 +5,14 @@ body {
     padding: 20px;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6; /* Improve readability */
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     background-color: white;
-    padding: 20px;
+    padding: 40px; /* Increased padding for better spacing */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -20,24 +21,28 @@ h1 {
     color: #2c3e50;
     text-align: center;
     margin-bottom: 40px;
+    font-size: 2.5rem; /* Larger font size for main heading */
+    font-weight: bold; /* Bold for emphasis */
 }
 
 h2 {
     color: #1abc9c;
     margin-bottom: 20px;
+    font-size: 2rem; /* Larger font size for subheadings */
+    font-weight: bold; /* Bold for emphasis */
 }
 
 /* Team Grid Layout */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 30px; /* Increased gap for better spacing */
 }
 
 /* Team Card Styles */
 .team-card {
     background-color: #fff;
-    padding: 20px;
+    padding: 25px; /* Increased padding for better spacing */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -55,18 +60,76 @@ h2 {
     height: 150px; /* Fixed height for images */
     border-radius: 50%; /* Circular images */
     object-fit: cover; /* Ensure the image covers the area without distortion */
-    margin-bottom: 15px;
-    border: 3px solid #1abc9c; /* Add a border around the image */
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    border: 4px solid #1abc9c; /* Thicker border for emphasis */
 }
 
 /* Text Styles */
 .team-card h3 {
-    margin: 10px 0;
+    margin: 15px 0; /* Increased margin for better spacing */
     color: #2c3e50;
+    font-size: 1.5rem; /* Larger font size for names */
+    font-weight: bold; /* Bold for emphasis */
 }
 
 .team-card p {
-    font-size: 0.9rem;
+    font-size: 1rem; /* Increased font size for better readability */
     color: #555;
     line-height: 1.6;
+    margin: 0; /* Remove default margin for better control */
+}
+
+/* Add a subtle background gradient to the body for a modern look */
+body {
+    background: linear-gradient(135deg, #f4f4f4 0%, #e0e0e0 100%);
+}
+
+/* Add a hover effect to the container for interactivity */
+.container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a subtle animation to the team cards */
+.team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.team-card:hover {
+    background-color: #f9f9f9; /* Light background color on hover */
+}
+
+/* Add a call-to-action button style */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #16a085;
+}
+
+/* Add a back button style */
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #34495e;
 }

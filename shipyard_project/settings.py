@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-poq&oz_!%b!h4b#*!$=7mivun4kyjw3t@7bhug5p+qu##b1nll
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://shipyard-project-2t3q.onrender.com/', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['shipyard-project-2t3q.onrender.com', '127.0.0.1', 'localhost']
+
 
 
 # Application definition
@@ -82,14 +83,7 @@ WSGI_APPLICATION = 'shipyard_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shipyard_db',  # Change to your database name
-        'USER': 'postgres',
-        'PASSWORD': 'saqsami',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(default='postgres://postgres:saqsami@localhost:5432/shipyard_db')
 }
 
 
